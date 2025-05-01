@@ -8,7 +8,7 @@ This Task Manager is a web application that allows users to create, view, update
 
 ## Preview
 
-<img width="800" src="https://raw.githubusercontent.com/MariosChartsias/Issue-Tracking-Web-Based-Application/main/Images/2022-09-24 15-08-42.gif">
+<img width="800" src="this has to be the .gif">
 
 ## Features
 
