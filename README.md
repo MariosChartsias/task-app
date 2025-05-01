@@ -240,15 +240,3 @@ All task endpoints require authentication. Include the JWT token in the Authoriz
 - The JWT secret key should be changed in a production environment and stored securely as an environment variable.
 - CORS is configured to allow requests only from http://localhost:3000. Update this for your production environment.
 
-## Future Improvements
-
-- Add password hashing
-- Implement user roles (admin, user)
-- Add task categories and priorities
-- Implement pagination for tasks
-- Add due dates and reminders for tasks
-- Implement user profile management
-
-## License
-
-This project is licensed under the MIT License.
