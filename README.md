@@ -6,6 +6,10 @@ A full-stack web application for managing tasks with user authentication.
 
 This Task Manager is a web application that allows users to create, view, update, and delete tasks. The application includes user authentication with JWT tokens, ensuring that users can only access their own tasks.
 
+## Preview
+
+<img width="800" src="https://raw.githubusercontent.com/MariosChartsias/Issue-Tracking-Web-Based-Application/main/Images/2022-09-24 15-08-42.gif">
+
 ## Features
 
 - User authentication (register, login, logout)
