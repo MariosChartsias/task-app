@@ -8,7 +8,7 @@ This Task Manager is a web application that allows users to create, view, update
 
 ## Preview
 
-<img width="800" src="this has to be the .gif">
+<img width="800" src="img/PreviewTask-app.gif" alt="Task Manager Preview">
 
 ## Features
 
