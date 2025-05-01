@@ -1,0 +1,62 @@
+/* Global styles */
+body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+  }
+  
+  .app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Card styles */
+  .card {
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form control styles */
+  .form-control:focus {
+    border-color: #4a86e8;
+    box-shadow: 0 0 0 0.25rem rgba(74, 134, 232, 0.25);
+  }
+  
+  /* Button hover effects */
+  .btn-primary {
+    background-color: #4a86e8;
+    border-color: #4a86e8;
+  }
+  
+  .btn-primary:hover {
+    background-color: #3a76d8;
+    border-color: #3a76d8;
+  }
+  
+  /* Task item styling */
+  .list-group-item {
+    transition: all 0.2s ease;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f1f5fd;
+  }
+  
+  /* Navbar styling */
+  .navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Animation for loading */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
