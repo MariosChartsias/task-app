@@ -39,7 +39,6 @@ public class TaskController {
 	@GetMapping
 	public ResponseEntity<?> getAll(@RequestHeader("Authorization") String authorization) {
 		try {
-			String username = jwtUtil.extractUsername(authorization);
 			List<Task> tasks = taskRepo.findAll();
 			return ResponseEntity.ok(tasks);
 		} catch (Exception e) {
@@ -57,7 +56,6 @@ public class TaskController {
 	@PostMapping
 	public ResponseEntity<?> create(@RequestBody Task task, @RequestHeader("Authorization") String authorization) {
 		try {
-			String username = jwtUtil.extractUsername(authorization);
 			Task savedTask = taskRepo.save(task);
 			return ResponseEntity.ok(savedTask);
 		} catch (Exception e) {
@@ -77,7 +75,6 @@ public class TaskController {
 	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Task task, 
 			@RequestHeader("Authorization") String authorization) {
 		try {
-			String username = jwtUtil.extractUsername(authorization);
 			
 			Optional<Task> existingTask = taskRepo.findById(id);
 			if (!existingTask.isPresent()) {
@@ -102,7 +99,6 @@ public class TaskController {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> delete(@PathVariable Long id, @RequestHeader("Authorization") String authorization) {
 		try {
-			String username = jwtUtil.extractUsername(authorization);
 			
 			Optional<Task> existingTask = taskRepo.findById(id);
 			if (!existingTask.isPresent()) {
