@@ -63,4 +63,31 @@ public class JwtUtil {
 			return false;
 		}
 	}
+	
+	/**
+	 * Processes the raw token from the Authorization header,
+	 * removing the "Bearer " prefix if present.
+	 * 
+	 * @param rawToken The token as received in the Authorization header
+	 * @return The clean token without Bearer prefix
+	 * @throws IllegalArgumentException if the token is null, empty or malformed
+	 */
+	public String processToken(String rawToken) {
+	    if (rawToken == null || rawToken.trim().isEmpty()) {
+	        throw new IllegalArgumentException("Token cannot be null or empty");
+	    }
+	    
+	    // Remove Bearer prefix if present
+	    String processedToken = rawToken;
+	    if (rawToken.startsWith("Bearer ")) {
+	        processedToken = rawToken.substring(7); // "Bearer " is 7 characters
+	    }
+	    
+	    // Basic validation that the token looks like a JWT
+	    if (!processedToken.contains(".")) {
+	        throw new IllegalArgumentException("Token is malformed: doesn't contain JWT sections");
+	    }
+	    
+	    return processedToken;
+	}
 }

@@ -13,8 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Controller for authentication operations.
- * Handles user registration and login.
+ * Controller for authentication operations. Handles user registration and
+ * login.
  */
 @RestController
 @RequestMapping("/api/auth")
@@ -22,7 +22,7 @@ import java.util.Map;
 public class AuthController {
 	@Autowired
 	private UserRepository userRepo;
-	
+
 	@Autowired
 	private JwtUtil jwtUtil;
 
@@ -38,13 +38,12 @@ public class AuthController {
 			// Check if username already exists
 			User existingUser = userRepo.findByUsername(user.getUsername());
 			if (existingUser != null) {
-				return ResponseEntity.status(HttpStatus.CONFLICT)
-						.body("Username already exists");
+				return ResponseEntity.status(HttpStatus.CONFLICT).body("Username already exists");
 			}
-			
+
 			// Save the new user
 			userRepo.save(user);
-			
+
 			Map<String, String> response = new HashMap<>();
 			response.put("message", "User registered successfully");
 			return ResponseEntity.ok(response);

@@ -36,16 +36,26 @@ public class JwtFilter extends OncePerRequestFilter {
         String token = null;
         String username = null;
 
-        // Extract token if Authorization header is present
+     // Extract token if Authorization header is present
         if (authHeader != null) {
-            token = authHeader;
             try {
+                // Process the token to remove Bearer prefix and validate basic format
+                token = jwtUtil.processToken(authHeader);
+                
+                // Extract username from the processed token
                 username = jwtUtil.extractUsername(token);
+            } catch (IllegalArgumentException e) {
+                // Token is malformed
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                response.getWriter().write("Malformed token: " + e.getMessage());
+                return;
             } catch (ExpiredJwtException e) {
+                // Token has expired
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 response.getWriter().write("Token expired");
                 return;
             } catch (Exception e) {
+                // Other JWT exceptions
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 response.getWriter().write("Invalid token");
                 return;
